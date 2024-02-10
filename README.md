@@ -41,9 +41,9 @@ Check out the [demo](https://chatroom-tjmanojofficial-dev.apps.sandbox-m2.ll9k.p
  The application will be running at http://localhost:5000.
 
 4. **Usage**
-- Open your web browser and navigate to http://localhost:5000.
-- Enter your name and either create a new room or join an existing one by entering the room code.
-- Chat with other users in real-time!
+ - Open your web browser and navigate to http://localhost:5000.
+ - Enter your name and either create a new room or join an existing one by entering the room code.
+ - Chat with other users in real-time!
 
 5. **Deployment**
    I have deployed the complete project using Openshift Platform and using docker images.
