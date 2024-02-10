@@ -2,6 +2,9 @@
 
 Welcome to the Flask Chat Application! This project allows users to chat in real-time using Socket.IO. Multiple users can join the chat room simultaneously.
 
+## Demo
+![Application Demo](https://chatroom-tjmanojofficial-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/)
+
 ## Features
 
 - Real-time chat functionality using Flask-SocketIO.
@@ -39,3 +42,7 @@ Welcome to the Flask Chat Application! This project allows users to chat in real
 - Open your web browser and navigate to http://localhost:5000.
 - Enter your name and either create a new room or join an existing one by entering the room code.
 - Chat with other users in real-time!
+
+5. **Deployment**
+   I have deployed the complete project using Openshift Platform and using docker images.
+
