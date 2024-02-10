@@ -3,7 +3,9 @@
 Welcome to the Flask Chat Application! This project allows users to chat in real-time using Socket.IO. Multiple users can join the chat room simultaneously.
 
 ## Demo
-![Application Demo](https://chatroom-tjmanojofficial-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/)
+
+Check out the [demo](https://chatroom-tjmanojofficial-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/) of the Flask Chat Application!
+
 
 ## Features
 
