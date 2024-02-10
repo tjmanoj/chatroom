@@ -30,6 +30,12 @@ Welcome to the Flask Chat Application! This project allows users to chat in real
    pip install -r requirements.txt
 
 3. **Run the application:**
-   ```python main.py
+   ```bash
+   python main.py
 
 The application will be running at http://localhost:5000.
+
+4.**Usage**
+- Open your web browser and navigate to http://localhost:5000.
+- Enter your name and either create a new room or join an existing one by entering the room code.
+- Chat with other users in real-time!
