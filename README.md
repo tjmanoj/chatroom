@@ -23,4 +23,4 @@ Welcome to the Flask Chat Application! This project allows users to chat in real
 
    ```bash
    git clone https://github.com/yourusername/flask-chat-app.git
-   cd flask-chat-app
+   cd chatroom
