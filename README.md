@@ -33,7 +33,7 @@ Welcome to the Flask Chat Application! This project allows users to chat in real
    ```bash
    python main.py
 
-- The application will be running at http://localhost:5000.
+ The application will be running at http://localhost:5000.
 
 4. **Usage**
 - Open your web browser and navigate to http://localhost:5000.
