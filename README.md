@@ -24,3 +24,12 @@ Welcome to the Flask Chat Application! This project allows users to chat in real
    ```bash
    git clone https://github.com/yourusername/flask-chat-app.git
    cd chatroom
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+3. **Run the application:**
+   ```python main.py
+
+The application will be running at http://localhost:5000.
