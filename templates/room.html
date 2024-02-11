@@ -1,28 +1,46 @@
 {% extends 'base.html' %} {% block content %}
-<div class="message-box">
     <h2>Chat Room: {{code}}</h2>
-    <div class="messages" id="messages"></div>
+    <div class="chat-container" id="messages"> </div>
+
     <div class="inputs">
-        <input type="text" rows="3" name="message" id="message" placeholder="message">
-        <button onclick="SendMessage()" type="button" name="send" id="send-btn">Send</button>
+        <input onsubmit="SendMessage()" class="user-input" type="text"  name="message" id="message" placeholder="message">
+        
+        <button class="send-button" onclick="SendMessage()" type="button" name="send" id="send-btn">Send</button>
     </div>
-</div>
 <script>
     var socketio = io();
     const messages = document.getElementById("messages");
+    let count = 0;
 
     const createMessage = (name, msg) => {
-        const content = `
-        <div class="text">
-            <span>
-                <strong>${name}</strong>: ${msg}
-            </span>
-            <span class="muted">
-                ${new Date().toLocaleString()}
-            </span>
+        const content1 = `
+        <div class="msg-container">
+        <h3 class="from-msg-profile-pic"><strong>${name}</strong></h3>
+        <div class="msg-text-container from-msg-text-container">
+          <p class='msg-text from-msg-text'>${msg}</p>
+          <p class='msg-time from-msg-time'>${new Date().toLocaleDateString()}</p>
         </div>
-        `;
-        messages.innerHTML += content;
+      </div>
+        `
+        const content2 = `
+        <div class="msg-container to-msg-container">
+        <h3 class="to-msg-profile-pic"><strong>${name}</strong></h3>
+        <div class="msg-text-container to-msg-text-container">
+          <p class='msg-text to-msg-text'>${msg}</p>
+          <p class='msg-time to-msg-time'>${new Date().toLocaleDateString()}</p>
+        </div>
+      </div>
+        `
+        if(count == 0){
+            messages.innerHTML += content1;
+            scrollChatWindowToBottom();
+            count = 1;
+        }
+        else{
+            messages.innerHTML += content2;
+            scrollChatWindowToBottom();
+            count = 0;
+        }
     };
 
     socketio.on("message", (data) => {
@@ -34,7 +52,26 @@
         if (message.value == "") return;
         socketio.emit("message", { data: message.value });
         message.value = "";
+        
     };
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("message");
+    const sendButton = document.getElementById("send-btn");
+
+    inputField.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendButton.click();
+        }
+    });
+
+    sendButton.addEventListener("click", SendMessage);
+});
+
+function scrollChatWindowToBottom() {
+    var chatWindow = document.getElementById("messages");
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
 </script>
 {% for msg in messages %}
 <script type="text/javascript">createMessage("{{msg.name}}", "{{msg.message}}")</script>
